@@ -52,14 +52,14 @@ const Post = ({ id, post, postPage }) => {
         ),
         (snapshot) => setComments(snapshot.docs)
       ),
-    [id]
+    [db, id]
   );
   useEffect(
     () =>
       setLiked(
         likes.findIndex((like) => like.id === session?.user?.uid) !== -1
       ),
-    [likes, session?.user?.uid]
+    [likes]
   );
   const likePost = async () => {
     if (liked) {
@@ -76,12 +76,12 @@ const Post = ({ id, post, postPage }) => {
       onClick={() => router.push(`/${id}`)}
     >
       {!postPage && (
-        <img src={post?.userImg} className='h-11 w-11 rounded-full mr-4' alt="user"/>
+        <img src={post?.userImg} className='h-11 w-11 rounded-full mr-4' />
       )}
       <div className='flex flex-col space-y-2 w-full'>
         <div className={`flex ${!postPage && "justify-between"}`}>
           {postPage && (
-            <img src={post?.userImg} className='h-11 w-11 rounded-full mr-4' alt="user"/>
+            <img src={post?.userImg} className='h-11 w-11 rounded-full mr-4' />
           )}
           <div className='#6e767d'>
             <div className='inline-block group'>
@@ -122,7 +122,7 @@ const Post = ({ id, post, postPage }) => {
         <img
           src={post?.image}
           alt=''
-          className='object-cover rounded-2xl max-h-[700px] mr-2'
+          classname='object-cover rounded-2xl max-h-[700px] mr-2'
         />
         <div
           className={`text-[#6e767d] flex justify-between w-10/12 ${

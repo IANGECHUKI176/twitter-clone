@@ -32,7 +32,7 @@ const Modal = () => {
       onSnapshot(doc(db, "posts", postId), (snapshot) => {
         setPost(snapshot.data());
       }),
-    [db, postId]
+    [db]
   );
 
   const sendComment = async (e) => {

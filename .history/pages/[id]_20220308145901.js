@@ -44,7 +44,7 @@ const PostPage = () => {
           setComments(snapshot.docs);
         }
       ),
-    [id]
+    [ id]
   );
   if (!session) return <Login providers={providers} />;
   return (

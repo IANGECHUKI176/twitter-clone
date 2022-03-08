@@ -26,7 +26,6 @@ function Trending({ result }) {
           height={70}
           objectFit='cover'
           className='rounded-2xl'
-          alt="result image"
         />
       ) : (
         <div className='icon group'>

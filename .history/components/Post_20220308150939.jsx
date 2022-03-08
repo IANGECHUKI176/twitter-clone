@@ -122,7 +122,7 @@ const Post = ({ id, post, postPage }) => {
         <img
           src={post?.image}
           alt=''
-          className='object-cover rounded-2xl max-h-[700px] mr-2'
+          classname='object-cover rounded-2xl max-h-[700px] mr-2'
         />
         <div
           className={`text-[#6e767d] flex justify-between w-10/12 ${

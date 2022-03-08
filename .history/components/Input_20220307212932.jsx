@@ -76,7 +76,7 @@ const Input = () => {
     >
       <img
         src={session.user.image}
-        alt='user'
+        alt=''
         className='w-10 h-10 rounded-full object-cover xl:mr-2.5'
       />
       <div className='w-full divide-y divide-gray-700'>
@@ -98,7 +98,7 @@ const Input = () => {
               </div>
               <img
                 src={selectedFile}
-                alt='selected file'
+                alt=''
                 className='rounded-2xl object-contain max-h-80'
               />
             </div>
